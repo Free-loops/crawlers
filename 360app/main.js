@@ -8,7 +8,7 @@ let flag = 1 // 当前页
 let data = [] // 爬取到的数据
 let page = 10 // 爬取页数
 let total = page * 49 // 爬取总条数
-let isDownload = false // 是否下载apk
+let isDownload = true // 是否下载apk
 let apkCount = 0 // apk下载数量
 
 let bar = new ProgressBar('爬取进度[:bar] :percent :elapsed秒', {
@@ -50,7 +50,7 @@ function saveData(data) {
     }
     if (isDownload) {
       console.log('\x1B[32m%s\x1B[0m', 'Apk download start')
-      download(data, 0)
+      download(0)
     }
   })
 }
